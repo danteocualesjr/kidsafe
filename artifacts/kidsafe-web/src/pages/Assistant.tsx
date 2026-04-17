@@ -110,52 +110,57 @@ export default function Assistant() {
   }
 
   return (
-    <div className="flex h-[calc(100vh-4rem)] flex-col bg-gradient-to-br from-accent/20 via-background to-background">
-      <header className="border-b bg-card/80 backdrop-blur">
-        <div className="container mx-auto flex items-center gap-3 px-4 py-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
-            <Sparkles className="h-5 w-5" />
+    <div className="flex h-[calc(100vh-5rem)] flex-col bg-background">
+      <header className="border-b border-border/40 bg-card py-6">
+        <div className="container mx-auto flex items-center justify-center gap-4 px-6">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg shadow-primary/20">
+            <Sparkles className="h-6 w-6" />
           </div>
           <div>
-            <h1 className="font-serif text-xl font-bold">KidSafe Assistant</h1>
-            <p className="text-xs text-muted-foreground">Trained on every review · Honest, calm, contextual</p>
+            <h1 className="font-serif text-3xl font-bold tracking-tight">KidSafe Assistant</h1>
+            <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground mt-1">Honest, calm, contextual</p>
           </div>
         </div>
       </header>
 
-      <div ref={scrollRef} className="flex-1 overflow-y-auto">
-        <div className="container mx-auto max-w-3xl space-y-6 px-4 py-8">
+      <div ref={scrollRef} className="flex-1 overflow-y-auto bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-[length:200px_200px] relative">
+        <div className="absolute inset-0 bg-background/95 backdrop-blur-[2px] mix-blend-overlay z-0"></div>
+        <div className="container mx-auto max-w-4xl space-y-8 px-6 py-12 relative z-10">
           <AnimatePresence initial={false}>
             {messages.map(m => (
               <motion.div
                 key={m.id}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`flex gap-3 ${m.role === "user" ? "justify-end" : "justify-start"}`}
+                className={`flex gap-4 ${m.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 {m.role === "assistant" && (
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"><Bot className="h-4 w-4" /></div>
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-primary/15 text-primary shadow-inner mt-2"><Bot className="h-5 w-5" /></div>
                 )}
-                <div className={`max-w-[80%] rounded-2xl px-5 py-3.5 ${m.role === "user" ? "bg-primary text-primary-foreground" : "bg-card border"}`}>
-                  <p className="whitespace-pre-line text-sm leading-relaxed">{m.text}</p>
+                <div className={`max-w-[85%] md:max-w-[75%] rounded-[2rem] px-8 py-6 shadow-md ${
+                  m.role === "user" 
+                    ? "bg-primary text-primary-foreground rounded-tr-sm" 
+                    : "bg-card border border-border/40 rounded-tl-sm"
+                }`}>
+                  <p className={`whitespace-pre-line text-lg leading-relaxed font-medium ${m.role === 'user' ? 'text-white' : 'text-foreground/90'}`}>{m.text}</p>
                 </div>
                 {m.role === "user" && (
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-secondary/30 text-secondary-foreground"><User className="h-4 w-4" /></div>
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-foreground text-background shadow-lg mt-2"><User className="h-5 w-5" /></div>
                 )}
               </motion.div>
             ))}
           </AnimatePresence>
           {typing && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex gap-3">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"><Bot className="h-4 w-4" /></div>
-              <div className="rounded-2xl border bg-card px-5 py-3.5">
-                <div className="flex gap-1">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-primary/15 text-primary shadow-inner mt-2"><Bot className="h-5 w-5" /></div>
+              <div className="rounded-[2rem] rounded-tl-sm border border-border/40 bg-card px-8 py-6 shadow-sm">
+                <div className="flex gap-2">
                   {[0, 1, 2].map(i => (
                     <motion.span
                       key={i}
-                      animate={{ opacity: [0.3, 1, 0.3] }}
-                      transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
-                      className="h-2 w-2 rounded-full bg-primary"
+                      animate={{ opacity: [0.3, 1, 0.3], y: [0, -4, 0] }}
+                      transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.2 }}
+                      className="h-2.5 w-2.5 rounded-full bg-primary"
                     />
                   ))}
                 </div>
@@ -164,35 +169,40 @@ export default function Assistant() {
           )}
 
           {messages.length === 1 && (
-            <div className="grid gap-2 pt-4 sm:grid-cols-2">
-              {STARTERS.map(s => (
-                <button
+            <div className="grid gap-4 pt-12 md:grid-cols-2">
+              {STARTERS.map((s, i) => (
+                <motion.button
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + (i * 0.1) }}
                   key={s.k}
                   onClick={() => send(s.q, s.k)}
-                  className="rounded-2xl border bg-card p-4 text-left text-sm transition-all hover-elevate"
+                  className="group rounded-[2rem] border border-border/40 bg-card p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/20"
                 >
-                  <div className="mb-2 inline-flex items-center gap-1.5 text-xs text-primary"><Sparkles className="h-3 w-3" /> Starter</div>
-                  <div className="font-medium">{s.q}</div>
-                </button>
+                  <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-accent/50 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-primary">
+                    <Sparkles className="h-3.5 w-3.5" /> Starter question
+                  </div>
+                  <div className="font-serif text-xl font-bold leading-tight group-hover:text-primary transition-colors">{s.q}</div>
+                </motion.button>
               ))}
             </div>
           )}
         </div>
       </div>
 
-      <div className="border-t bg-card/80 backdrop-blur">
-        <div className="container mx-auto max-w-3xl px-4 py-4">
-          <form onSubmit={(e) => { e.preventDefault(); send(input); }} className="flex items-center gap-2 rounded-full border bg-background p-1.5 shadow-sm focus-within:ring-2 focus-within:ring-primary/30">
-            <ShieldCheck className="ml-3 h-4 w-4 text-muted-foreground" />
+      <div className="border-t border-border/40 bg-card py-6 shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.05)] z-20 relative">
+        <div className="container mx-auto max-w-4xl px-6">
+          <form onSubmit={(e) => { e.preventDefault(); send(input); }} className="flex items-center gap-3 rounded-[2rem] border-2 border-border/50 bg-background p-2 shadow-inner focus-within:border-primary/50 focus-within:ring-4 focus-within:ring-primary/10 transition-all duration-300">
+            <ShieldCheck className="ml-4 h-6 w-6 text-muted-foreground" />
             <input
               value={input}
               onChange={e => setInput(e.target.value)}
               placeholder="Ask anything about films, books, or parenting choices..."
-              className="flex-1 bg-transparent px-2 py-2 text-sm outline-none placeholder:text-muted-foreground"
+              className="flex-1 bg-transparent px-3 py-4 text-lg font-medium outline-none placeholder:text-muted-foreground"
             />
-            <Button type="submit" className="rounded-full"><Send className="h-4 w-4" /></Button>
+            <Button type="submit" size="lg" className="rounded-full h-14 w-14 p-0 shadow-md shadow-primary/20"><Send className="h-5 w-5" /></Button>
           </form>
-          <p className="mt-2 text-center text-[11px] text-muted-foreground">Responses are illustrative. Always trust your own knowledge of your kid.</p>
+          <p className="mt-4 text-center text-xs font-bold uppercase tracking-widest text-muted-foreground">Responses are illustrative. Always trust your own knowledge of your kid.</p>
         </div>
       </div>
     </div>
