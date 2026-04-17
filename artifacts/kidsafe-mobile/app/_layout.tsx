@@ -24,6 +24,9 @@ function RootLayoutNav() {
     <Stack screenOptions={{ headerBackTitle: "Back", headerStyle: { backgroundColor: "#fbf7f2" }, headerTitleStyle: { fontFamily: "Inter_700Bold" } }}>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="film/[id]" options={{ title: "" }} />
+      <Stack.Screen name="book/[id]" options={{ title: "" }} />
+      <Stack.Screen name="place/[id]" options={{ title: "" }} />
+      <Stack.Screen name="activity/[id]" options={{ title: "" }} />
       <Stack.Screen name="thread/[id]" options={{ title: "Discussion" }} />
     </Stack>
   );
