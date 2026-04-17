@@ -104,7 +104,7 @@ export default function HomeScreen() {
       </View>
       <View style={{ paddingHorizontal: 20, gap: 10 }}>
         {threads.slice(0, 3).map(t => (
-          <Link key={t.id} href={`/thread/${t.id}` as any} asChild>
+          <Link key={t.id} href={{ pathname: "/thread/[id]", params: { id: t.id } }} asChild>
             <Pressable>
               <View style={{ borderRadius: 18, padding: 16, backgroundColor: colors.card, borderWidth: 1, borderColor: colors.border }}>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginBottom: 8 }}>

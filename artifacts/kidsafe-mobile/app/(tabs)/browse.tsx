@@ -96,7 +96,7 @@ export default function BrowseScreen() {
         ) : (
           filtered.map(f => (
             <View key={f.id} style={{ width: "50%", padding: 6 }}>
-              <FilmCard film={f} width={undefined as any} />
+              <FilmCard film={f} />
             </View>
           ))
         )}

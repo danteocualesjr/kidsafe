@@ -37,7 +37,7 @@ export default function CommunityScreen() {
 
       <View style={{ paddingHorizontal: 20, marginTop: 16, gap: 10 }}>
         {threads.map(t => (
-          <Link key={t.id} href={`/thread/${t.id}` as any} asChild>
+          <Link key={t.id} href={{ pathname: "/thread/[id]", params: { id: t.id } }} asChild>
             <Pressable>
               <View style={{ borderRadius: 18, padding: 16, backgroundColor: colors.card, borderWidth: 1, borderColor: colors.border }}>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginBottom: 8 }}>

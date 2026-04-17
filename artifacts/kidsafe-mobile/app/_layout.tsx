@@ -25,7 +25,6 @@ function RootLayoutNav() {
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="film/[id]" options={{ title: "" }} />
       <Stack.Screen name="thread/[id]" options={{ title: "Discussion" }} />
-      <Stack.Screen name="assistant" options={{ title: "AI Assistant", presentation: "modal" }} />
     </Stack>
   );
 }

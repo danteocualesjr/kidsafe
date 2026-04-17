@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { Search, SlidersHorizontal, Film as FilmIcon, BookOpen, MapPin, Palette } from "lucide-react";
+import { Search, SlidersHorizontal, Film as FilmIcon, BookOpen, MapPin, Palette, type LucideIcon } from "lucide-react";
 import { films } from "@/data/films";
 import { books } from "@/data/books";
 import { places } from "@/data/places";
@@ -33,7 +33,7 @@ const SORT_OPTIONS = [
   { key: "newest", label: "Recently added" },
 ];
 
-const CATEGORIES: { key: Cat; label: string; icon: any }[] = [
+const CATEGORIES: { key: Cat; label: string; icon: LucideIcon }[] = [
   { key: "films", label: "Films", icon: FilmIcon },
   { key: "books", label: "Books", icon: BookOpen },
   { key: "places", label: "Places", icon: MapPin },

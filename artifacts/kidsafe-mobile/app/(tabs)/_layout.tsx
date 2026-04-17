@@ -49,6 +49,13 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="assistant"
+        options={{
+          title: "Assistant",
+          tabBarIcon: ({ color }) => <Feather name="zap" size={22} color={color} />,
+        }}
+      />
+      <Tabs.Screen
         name="community"
         options={{
           title: "Community",

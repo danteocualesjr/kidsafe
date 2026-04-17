@@ -9,12 +9,13 @@ import { useColors } from "@/hooks/useColors";
 export function FilmCard({ film, width = 160 }: { film: Film; width?: number }) {
   const colors = useColors();
   return (
-    <Link href={`/film/${film.id}` as any} asChild>
+    <Link href={{ pathname: "/film/[id]", params: { id: film.id } }} asChild>
       <Pressable
         onPress={() => Haptics.selectionAsync()}
         style={({ pressed }) => [
           styles.card,
-          { width, backgroundColor: colors.card, borderColor: colors.border, opacity: pressed ? 0.9 : 1 },
+          width !== undefined ? { width } : null,
+          { backgroundColor: colors.card, borderColor: colors.border, opacity: pressed ? 0.9 : 1 },
         ]}
       >
         <View style={styles.posterWrap}>
