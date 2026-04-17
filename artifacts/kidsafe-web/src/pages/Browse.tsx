@@ -1,15 +1,16 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, SlidersHorizontal, Film as FilmIcon, BookOpen, MapPin, Palette, type LucideIcon } from "lucide-react";
+import { Search, SlidersHorizontal, Film as FilmIcon, BookOpen, MapPin, Palette, Gamepad2, type LucideIcon } from "lucide-react";
 import { films } from "@/data/films";
 import { books } from "@/data/books";
 import { places } from "@/data/places";
 import { activities } from "@/data/activities";
+import { games } from "@/data/games";
 import { ContentCard } from "@/components/ContentCard";
 import { avgConcern } from "@/lib/format";
 import { Button } from "@/components/ui/button";
 
-type Cat = "films" | "books" | "places" | "activities";
+type Cat = "films" | "books" | "places" | "activities" | "games";
 
 const AGE_GROUPS = [
   { key: "all", label: "All ages", min: 0, max: 99 },
@@ -36,6 +37,7 @@ const SORT_OPTIONS = [
 const CATEGORIES: { key: Cat; label: string; icon: LucideIcon }[] = [
   { key: "films", label: "Films", icon: FilmIcon },
   { key: "books", label: "Books", icon: BookOpen },
+  { key: "games", label: "Games", icon: Gamepad2 },
   { key: "places", label: "Places", icon: MapPin },
   { key: "activities", label: "Activities", icon: Palette },
 ];
@@ -61,6 +63,10 @@ export default function Browse() {
     if (cat === "places") return places.map((p, i) => ({
       id: p.id, href: `/place/${p.id}`, title: p.name, subtitle: `${p.location} · ${p.category}`, aspect: "4/3",
       ageRecommendation: p.ageRecommendation, safetyScores: p.safetyScores, tags: p.tags, seed: i + 2,
+    }));
+    if (cat === "games") return games.map((g, i) => ({
+      id: g.id, href: `/game/${g.id}`, title: g.title, subtitle: `${g.developer} · ${g.platforms.slice(0, 2).join(", ")}`,
+      imageUrl: g.coverUrl, ageRecommendation: g.ageRecommendation, safetyScores: g.safetyScores, tags: g.tags, seed: i + 4,
     }));
     return activities.map((a, i) => ({
       id: a.id, href: `/activity/${a.id}`, title: a.name, subtitle: a.category, aspect: "4/3",

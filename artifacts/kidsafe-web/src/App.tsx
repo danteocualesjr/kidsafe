@@ -13,6 +13,7 @@ import FilmDetail from "@/pages/FilmDetail";
 import BookDetail from "@/pages/BookDetail";
 import PlaceDetail from "@/pages/PlaceDetail";
 import ActivityDetail from "@/pages/ActivityDetail";
+import GameDetail from "@/pages/GameDetail";
 import Community from "@/pages/Community";
 import ThreadDetail from "@/pages/ThreadDetail";
 import Assistant from "@/pages/Assistant";
@@ -37,6 +38,7 @@ function Router() {
           <Route path="/book/:id" component={BookDetail} />
           <Route path="/place/:id" component={PlaceDetail} />
           <Route path="/activity/:id" component={ActivityDetail} />
+          <Route path="/game/:id" component={GameDetail} />
           <Route path="/community" component={Community} />
           <Route path="/community/:id" component={ThreadDetail} />
           <Route path="/assistant" component={Assistant} />

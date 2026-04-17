@@ -68,6 +68,27 @@ export type Place = {
   tags: string[];
 };
 
+export type Game = {
+  id: string;
+  title: string;
+  developer: string;
+  year: number;
+  ageRecommendation: number;
+  coverUrl: string;
+  platforms: string[];
+  genres: string[];
+  multiplayer: "single" | "local" | "online" | "both";
+  hasChat: boolean;
+  hasInAppPurchases: boolean;
+  description: string;
+  safetyScores: SafetyScores;
+  parentReviews: Review[];
+  kidReviews: Review[];
+  whatParentsNeedToKnow: string;
+  tags: string[];
+  similarSaferIds: string[];
+};
+
 export type Activity = {
   id: string;
   name: string;
