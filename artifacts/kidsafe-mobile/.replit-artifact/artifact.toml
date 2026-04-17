@@ -1,0 +1,27 @@
+kind = "mobile"
+previewPath = "/kidsafe-mobile/"
+title = "KidSafe Mobile"
+version = "1.0.0"
+id = "artifacts/kidsafe-mobile"
+router = "expo-domain"
+
+[[integratedSkills]]
+name = "expo"
+version = "1.0.0"
+
+[[services]]
+ensurePreviewReachable = "/status"
+name = "expo"
+paths = [ "/kidsafe-mobile/" ]
+localPort = 18398
+
+[services.development]
+run = "pnpm --filter @workspace/kidsafe-mobile run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/kidsafe-mobile", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/kidsafe-mobile", "run", "serve" ]
+
+[services.env]
+PORT = "18398"
+BASE_PATH = "/kidsafe-mobile/"

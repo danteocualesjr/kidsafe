@@ -1,0 +1,115 @@
+import { Thread } from "./types";
+
+export const threads: Thread[] = [
+  {
+    id: "stranger-things-7yo",
+    title: "Is Stranger Things really not okay for a 7-year-old?",
+    author: "Hannah K.",
+    category: "Films & TV",
+    replies: 24,
+    likes: 47,
+    lastActivity: "2 hours ago",
+    content: "My son is mature for his age and his classmates have been talking about it. He keeps asking. I'm leaning toward 'no, not yet' but wanted to hear from parents who've watched it with their kids.",
+    comments: [
+      { id: "c1", author: "Marcus J.", date: "1 hour ago", likes: 18, content: "We waited until 11 with our oldest. Even then, the Demogorgon scenes had her checking under the bed for weeks. Mature is a vibe; nightmare-fuel is its own category." },
+      { id: "c2", author: "Priya R.", date: "45 min ago", likes: 12, content: "Hard no until at least 10 in our house. The kids who've watched it earlier in our circle are visibly more anxious. Anecdotal but consistent." },
+      { id: "c3", author: "David L.", date: "30 min ago", likes: 9, content: "We compromised by watching the first episode together at 9. Talked about which parts were special effects. He decided he wanted to wait. Surprisingly empowering for him." },
+    ],
+  },
+  {
+    id: "screen-time-summer",
+    title: "How are you handling screen time over summer break?",
+    author: "Elena S.",
+    category: "Daily Life",
+    replies: 38,
+    likes: 89,
+    lastActivity: "5 hours ago",
+    content: "Last summer was a free-for-all and we paid the price for it. Looking for realistic structures that don't require me to be the screen-time police 24/7.",
+    comments: [
+      { id: "c1", author: "Jacob R.", date: "4 hours ago", likes: 22, content: "We do a 'green light hour' after lunch - all screens are open, no questions. Outside that, screens are earned by reading or outdoor time. The autonomy in that hour matters." },
+      { id: "c2", author: "Carmen V.", date: "3 hours ago", likes: 15, content: "Family movie night Fridays as the main cultural event. Reduces the constant negotiation because there's a known anchor." },
+    ],
+  },
+  {
+    id: "tweens-online-safety",
+    title: "Talking to my 11-year-old about online safety - help",
+    author: "Tomas L.",
+    category: "Tweens & Teens",
+    replies: 19,
+    likes: 56,
+    lastActivity: "1 day ago",
+    content: "She's getting her first phone for her 12th birthday. I want to have the conversations now without making her terrified of the internet.",
+    comments: [
+      { id: "c1", author: "Imani O.", date: "20 hours ago", likes: 28, content: "Frame it as 'public street rules' rather than 'stranger danger'. Same instincts apply - don't share where you live, don't get into a car (DM) with strangers, etc." },
+      { id: "c2", author: "Ahmed F.", date: "18 hours ago", likes: 17, content: "We do a weekly 'tech tea' where we look at her phone together for 20 minutes. Started before she had it. It's now routine, not surveillance." },
+    ],
+  },
+  {
+    id: "sensitive-kid-films",
+    title: "Recommend films for a very sensitive 6-year-old?",
+    author: "Sophie B.",
+    category: "Films & TV",
+    replies: 27,
+    likes: 64,
+    lastActivity: "1 day ago",
+    content: "He cries at the opening of 'Up'. Looking for adventures and good stories without any peril, scary characters, or sad parts.",
+    comments: [
+      { id: "c1", author: "Margaret O.", date: "23 hours ago", likes: 19, content: "The Garden Secret. Snow Day Symphony. Summer of Fireflies. These are our 'genuinely zero anxiety' picks. Slow-paced and beautiful." },
+      { id: "c2", author: "Pearl K.", date: "22 hours ago", likes: 14, content: "Adding to the above - The Lighthouse Cat. My sensitive 5-year-old has watched it ten times." },
+    ],
+  },
+  {
+    id: "books-grief",
+    title: "Books for a 7yo whose grandmother just died",
+    author: "Cassia W.",
+    category: "Books & Reading",
+    replies: 16,
+    likes: 71,
+    lastActivity: "2 days ago",
+    content: "We're navigating big grief and looking for books that don't shy away from it but also don't traumatize.",
+    comments: [
+      { id: "c1", author: "Hassan K.", date: "2 days ago", likes: 31, content: "Wishing Stones is breathtaking. The Button Collector for something gentler. Both treat grief as an ongoing conversation, not a problem to solve." },
+    ],
+  },
+  {
+    id: "best-museum-toddler",
+    title: "Best museums for a curious 3-year-old?",
+    author: "Renata L.",
+    category: "Places & Activities",
+    replies: 11,
+    likes: 33,
+    lastActivity: "2 days ago",
+    content: "Visiting from out of town. Looking for hands-on, low-stress, stroller-accessible options.",
+    comments: [
+      { id: "c1", author: "Ines R.", date: "2 days ago", likes: 14, content: "City Children's Museum hits all your criteria. Members-only mornings on Mondays are calmest if you can swing it." },
+    ],
+  },
+  {
+    id: "sibling-age-gap-films",
+    title: "Movies for a 4-year-old AND a 9-year-old?",
+    author: "Diane P.",
+    category: "Films & TV",
+    replies: 22,
+    likes: 41,
+    lastActivity: "3 days ago",
+    content: "We never seem to find anything that satisfies both. Looking for the rare film that lands in the middle.",
+    comments: [
+      { id: "c1", author: "Aoife C.", date: "2 days ago", likes: 18, content: "My Friend Bolt was perfect for our 5 and 8. Visually rich enough for older, gentle enough for younger." },
+    ],
+  },
+  {
+    id: "phone-free-vacation",
+    title: "Has anyone done a phone-free family vacation?",
+    author: "Caleb M.",
+    category: "Daily Life",
+    replies: 14,
+    likes: 52,
+    lastActivity: "4 days ago",
+    content: "Considering a one-week, no-phones-for-anyone trip this summer. Realistic? Disastrous? Tell me your stories.",
+    comments: [
+      { id: "c1", author: "Theo W.", date: "4 days ago", likes: 23, content: "Did it last summer in a cabin. First three days were uncomfortable. Then magical. The kids talked more in that week than the prior month combined." },
+    ],
+  },
+];
+
+export const getThread = (id: string) => threads.find(t => t.id === id);

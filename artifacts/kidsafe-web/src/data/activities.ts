@@ -1,0 +1,118 @@
+import { Activity } from "./types";
+
+export const activities: Activity[] = [
+  {
+    id: "kitchen-science-kit",
+    name: "Kitchen Science Adventures",
+    ageRecommendation: 5,
+    imageUrl: "",
+    category: "STEM",
+    description: "A weekly subscription kit featuring food-safe science experiments using common kitchen ingredients.",
+    safetyScores: { violence: 0, language: 0, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 2, positiveMessages: 5, roleModels: 5 },
+    parentReviews: [
+      { id: "p1", author: "Hana M.", rating: 5, text: "Genuinely educational with minimal mess. The 'lava lamp' week was a hit.", date: "March 15, 2026", isParent: true },
+    ],
+    whatParentsNeedToKnow: "Subscription required ($24/month). All instructions are kid-led with adult supervision noted clearly.",
+    tags: ["stem", "subscription", "indoor", "educational"],
+  },
+  {
+    id: "nature-journaling",
+    name: "Nature Journaling Workshop",
+    ageRecommendation: 6,
+    imageUrl: "",
+    category: "Outdoor",
+    description: "Local park-led monthly workshop teaching observational drawing, watercolor sketching, and nature identification.",
+    safetyScores: { violence: 0, language: 0, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 0, positiveMessages: 5, roleModels: 5 },
+    parentReviews: [
+      { id: "p1", author: "Pearl K.", rating: 5, text: "Free, beautiful, and screen-free. My daughter started a backyard journal at home.", date: "March 9, 2026", isParent: true },
+    ],
+    whatParentsNeedToKnow: "Free, registration required. Held rain or shine - dress accordingly. All supplies provided.",
+    tags: ["outdoor", "free", "art", "nature"],
+  },
+  {
+    id: "junior-pottery",
+    name: "Junior Pottery Studio",
+    ageRecommendation: 7,
+    imageUrl: "",
+    category: "Arts",
+    description: "Drop-in pottery sessions for kids 7-13 with supervised wheel time and air-dry hand-building options for younger siblings.",
+    safetyScores: { violence: 0, language: 0, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 1, positiveMessages: 5, roleModels: 5 },
+    parentReviews: [
+      { id: "p1", author: "Theo W.", rating: 4, text: "Studio is calm and well-lit. Pricing is per piece, can add up fast.", date: "March 1, 2026", isParent: true },
+    ],
+    whatParentsNeedToKnow: "Wear clothes that can get dirty. Firing/glazing takes 2-3 weeks for finished pieces.",
+    tags: ["indoor", "art", "weekend", "siblings"],
+  },
+  {
+    id: "kids-cooking-class",
+    name: "Saturday Kids' Cooking Class",
+    ageRecommendation: 6,
+    imageUrl: "",
+    category: "Cooking",
+    description: "Weekly community center cooking class focusing on world cuisines and safe knife skills.",
+    safetyScores: { violence: 0, language: 0, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 0, positiveMessages: 5, roleModels: 5 },
+    parentReviews: [
+      { id: "p1", author: "Sahar I.", rating: 5, text: "Allergen-aware and confidence-building. My picky eater now eats lentils.", date: "March 26, 2026", isParent: true },
+    ],
+    whatParentsNeedToKnow: "Allergens noted on each week's recipe. Knife skills introduced gradually with safe kid knives.",
+    tags: ["indoor", "cooking", "weekend", "skills"],
+  },
+  {
+    id: "youth-yoga",
+    name: "Sunbeam Kids' Yoga",
+    ageRecommendation: 4,
+    imageUrl: "",
+    category: "Movement",
+    description: "Story-based yoga classes that use breathing exercises and animal poses to teach mindfulness.",
+    safetyScores: { violence: 0, language: 0, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 0, positiveMessages: 5, roleModels: 5 },
+    parentReviews: [
+      { id: "p1", author: "Tova B.", rating: 5, text: "An absolute reset for our high-energy 5-year-old. She now requests 'belly breaths' on hard days.", date: "April 3, 2026", isParent: true },
+    ],
+    whatParentsNeedToKnow: "No mats required - all provided. Parents can sit in for the first class. Gently introduces meditation.",
+    tags: ["indoor", "mindfulness", "movement", "weekly"],
+  },
+  {
+    id: "library-story-time",
+    name: "Tuesday Story Time",
+    ageRecommendation: 2,
+    imageUrl: "",
+    category: "Reading",
+    description: "Weekly free library story time with songs, finger plays, and themed picture books for ages 2-5.",
+    safetyScores: { violence: 0, language: 0, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 0, positiveMessages: 5, roleModels: 5 },
+    parentReviews: [
+      { id: "p1", author: "Lev K.", rating: 5, text: "Free, warm, and the librarians are extraordinary. Brings the whole neighborhood out.", date: "March 31, 2026", isParent: true },
+    ],
+    whatParentsNeedToKnow: "Free, no registration. Snacks provided at end. Community-rich environment.",
+    tags: ["indoor", "free", "books", "toddler-friendly"],
+  },
+  {
+    id: "neighborhood-soccer",
+    name: "Neighborhood Soccer League",
+    ageRecommendation: 5,
+    imageUrl: "",
+    category: "Sports",
+    description: "Volunteer-led recreational soccer league focused on skill-building, sportsmanship, and zero-pressure play.",
+    safetyScores: { violence: 1, language: 1, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 1, positiveMessages: 5, roleModels: 4 },
+    parentReviews: [
+      { id: "p1", author: "Marcus P.", rating: 4, text: "Great coaches. One sideline parent has gotten heated - league has clear conduct policy though.", date: "March 20, 2026", isParent: true },
+    ],
+    whatParentsNeedToKnow: "Some sideline parent intensity reported. League has good behavior guidelines. Cleats and shin guards required.",
+    tags: ["outdoor", "sports", "weekly", "team"],
+  },
+  {
+    id: "junior-coding",
+    name: "Junior Coders Club",
+    ageRecommendation: 8,
+    imageUrl: "",
+    category: "STEM",
+    description: "After-school coding club teaching Scratch and beginner Python through game-building projects.",
+    safetyScores: { violence: 0, language: 0, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 1, positiveMessages: 5, roleModels: 5 },
+    parentReviews: [
+      { id: "p1", author: "Ananya G.", rating: 5, text: "Screen time with substance. My 9-year-old built her first game and is now obsessed (in a good way).", date: "March 6, 2026", isParent: true },
+    ],
+    whatParentsNeedToKnow: "Two hours of screen time per session. Devices provided, no installations needed at home.",
+    tags: ["indoor", "stem", "after-school", "coding"],
+  },
+];
+
+export const getActivity = (id: string) => activities.find(a => a.id === id);

@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "KidSafe"
+version = "1.0.0"
+id = "artifacts/kidsafe-web"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25382
+
+[services.development]
+run = "pnpm --filter @workspace/kidsafe-web run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/kidsafe-web", "run", "build" ]
+publicDir = "artifacts/kidsafe-web/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25382"
+BASE_PATH = "/"

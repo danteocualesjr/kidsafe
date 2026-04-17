@@ -1,0 +1,56 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "BvaSTJgyUf-pXy8uE3biD"
+uri = "file://attached_assets/generated_images/generated_image_0.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "Aio_frjIleXw7syNOUvMr"
+uri = "file://attached_assets/generated_images/generated_image_1.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "crDdL9hVpAfq2eVgKBZwT"
+uri = "file://attached_assets/generated_images/generated_image_2.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "eCW3_HTQ0ByndcudBxv8l"
+uri = "file://attached_assets/generated_images/generated_image_3.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "H9zeewI4JKBl-hbCpsIf6"
+uri = "file://attached_assets/generated_images/generated_image_4.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "J35OlbzOc5g6xUvehWwF0"
+uri = "file://attached_assets/generated_images/generated_image_5.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "YRCykePXgkS_nuxAuZAlI"
+uri = "file://attached_assets/generated_images/generated_image_6.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "k6kYryBi1nerUSx7VuYK9"
+uri = "file://attached_assets/generated_images/generated_image_7.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "Cw2owbBjWs28en5xbI3UG"
+uri = "file://attached_assets/generated_images/generated_image_8.png"
+type = "image"
+title = "generated_image"
