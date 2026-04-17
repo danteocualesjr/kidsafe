@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KidSafe - The Incredibles</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#72787f",
+                        "secondary-container": "#97edf7",
+                        "on-secondary-fixed": "#002023",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed-dim": "#7ed4dd",
+                        "surface-bright": "#f7f9fb",
+                        "surface": "#f7f9fb",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface-variant": "#42474e",
+                        "tertiary-fixed-dim": "#ffb955",
+                        "tertiary": "#462b00",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed-variant": "#004f55",
+                        "primary-fixed-dim": "#9fcbf4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-container": "#644000",
+                        "tertiary-fixed": "#ffddb4",
+                        "secondary-fixed": "#9af0fa",
+                        "on-tertiary-fixed-variant": "#633f00",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#f5a623",
+                        "secondary": "#006971",
+                        "inverse-primary": "#9fcbf4",
+                        "primary": "#003453",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#291800",
+                        "surface-tint": "#356286",
+                        "surface-container-low": "#f2f4f6",
+                        "primary-container": "#1a4b6e",
+                        "on-background": "#191c1e",
+                        "primary-fixed": "#cde5ff",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-fixed": "#001d32",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "on-error": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-secondary-container": "#006d76",
+                        "on-primary-fixed-variant": "#194a6d",
+                        "on-primary-container": "#8fbbe3",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e6e8ea",
+                        "outline-variant": "#c2c7cf",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 30px 60px -12px rgba(0, 52, 83, 0.08);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-16 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl">
+<div class="text-2xl font-headline font-bold tracking-tight text-sky-900 dark:text-sky-100">KidSafe</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sky-900 dark:text-sky-100 border-b-2 border-sky-900 dark:border-sky-400 font-semibold font-label" href="#">Movies</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium font-label hover:text-sky-700 dark:hover:text-sky-300 transition-colors" href="#">Books</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium font-label hover:text-sky-700 dark:hover:text-sky-300 transition-colors" href="#">Places</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium font-label hover:text-sky-700 dark:hover:text-sky-300 transition-colors" href="#">Activities</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-sky-900">search</span>
+<span class="material-symbols-outlined text-sky-900" data-weight="fill" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[716px] flex items-end pb-20 px-8 lg:px-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="The Incredibles Movie Still" class="w-full h-full object-cover" data-alt="vibrant animated family of superheroes in heroic pose with orange and red tones, cinematic lighting, high quality 3d animation style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiYa4_NKWmVNU9Be_E-Uy7bUePsBRvrbIGIr6KlML-vB11BaEw9NUm-DEa52lXDhCFuAKakR6l4qy34efBOd981JJnT7wq_30QqG-YMz1xS_FTNGL3Z62anXG1ZO1iHRtqZ4_zwkabQaZm2larXI36uSR402AenVM5wX6TrPtfuoBhUTDC0bKkFmNl9EAnRrIQag0iC7wP7-yfGSIn9IUyqTdM_FEXyz44XNSmhLH6m6ovIzcj3ZWRXCxYVcASC4DSMF3JX1LT8vsJ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-secondary text-on-secondary px-4 py-1 rounded-full text-xs font-bold font-label tracking-wider uppercase">KidSafe Certified</span>
+<span class="text-on-surface-variant font-semibold text-sm">2004 • 1h 55m • Animation/Action</span>
+</div>
+<h1 class="font-headline text-6xl md:text-8xl font-extrabold tracking-tighter text-primary mb-6 leading-none">The Incredibles</h1>
+<div class="flex gap-4">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-3xl font-bold flex items-center gap-2 shadow-lg scale-95 active:duration-100 transition-transform">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                    Watch Trailer
+                </button>
+<button class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-3xl font-bold transition-all hover:bg-surface-variant">
+                    Add to Watchlist
+                </button>
+</div>
+</div>
+</header>
+<main class="relative z-20 -mt-10 px-4 lg:px-20 pb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Quick Summary & Deep Dive -->
+<div class="lg:col-span-8 space-y-8">
+<!-- KidSafe AI Quick Summary -->
+<section class="bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-tertiary-container/10 p-2 rounded-xl">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<h2 class="font-headline text-2xl font-bold text-primary">KidSafe AI Quick Summary</h2>
+</div>
+<p class="text-on-surface-variant text-lg leading-relaxed font-medium">
+                        "The Incredibles" is a masterclass in family dynamics masquerading as a superhero flick. It's largely safe for ages 6+, emphasizing teamwork and the "super" in being ordinary. Some mild cartoon violence and intense chase sequences may startle very young viewers, but the core message remains deeply positive and educational regarding personal responsibility.
+                    </p>
+</section>
+<!-- Safety Deep Dive -->
+<section class="bg-surface-container-low p-8 rounded-3xl">
+<h2 class="font-headline text-3xl font-bold text-primary mb-8">Safety Deep Dive</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Progress Items -->
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-bold text-on-surface">Violence</span>
+<span class="text-on-surface-variant">2/5</span>
+</div>
+<div class="h-3 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 40%"></div>
+</div>
+<p class="text-xs mt-2 text-on-surface-variant">Cartoon combat, no blood or graphic injury.</p>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-bold text-on-surface">Profanity</span>
+<span class="text-on-surface-variant">1/5</span>
+</div>
+<div class="h-3 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 20%"></div>
+</div>
+<p class="text-xs mt-2 text-on-surface-variant">Minimal mild insults (e.g., "idiot").</p>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-bold text-on-surface">Adult Themes</span>
+<span class="text-on-surface-variant">0/5</span>
+</div>
+<div class="h-3 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 5%"></div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-bold text-on-surface">Fear/Suspense</span>
+<span class="text-on-surface-variant">3/5</span>
+</div>
+<div class="h-3 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 60%"></div>
+</div>
+<p class="text-xs mt-2 text-on-surface-variant">Intense robot battles and peril scenes.</p>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-bold text-on-surface">Educational Value</span>
+<span class="text-on-surface-variant">4/5</span>
+</div>
+<div class="h-3 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 80%"></div>
+</div>
+<p class="text-xs mt-2 text-on-surface-variant">Explores emotional intelligence and family unity.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<h2 class="font-headline text-3xl font-bold text-primary">Community Voice</h2>
+<button class="text-secondary font-bold font-label hover:underline">Read All 242 Reviews</button>
+</div>
+<div class="space-y-4">
+<!-- Expert Review -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl border-l-4 border-tertiary shadow-sm">
+<div class="flex items-center gap-4 mb-4">
+<img alt="Expert Avatar" class="w-12 h-12 rounded-full object-cover" data-alt="portrait of a middle-aged male child psychologist with glasses, friendly expression, studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwur2Na_u09iNPvMJopbZFrEH1DXmoA4TYxKgqBCRT_Z2Pw9lzzHYft0GsBWZRRArN_PgN3X2UHn9Ylt4zU5i6odYtOhnMFwJnY1Fs0tQ8KVl8OV1AbCEUc9RmuQNkDc5ogDtaiAZYiA-8_Ha-IGMOz-kPCvx7xSpzvilRVzEPk0i8KSHedARqK5iyEBasNqJ2A6alFie8VDojhr9Ta6uFvCoOvQsbEX0K8ZfhuLbzUF_XhCWzD_IcaJNmwRjULR2iuy5T1MgLXtQi"/>
+<div>
+<p class="font-bold text-primary">Dr. Julian Vance</p>
+<p class="text-xs text-on-surface-variant">Senior Child Development Expert</p>
+</div>
+<div class="ml-auto bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-xs font-bold">EXPERT PICK</div>
+</div>
+<p class="text-on-surface-variant italic">"A brilliant exploration of mid-life crisis and family dynamics that parents will enjoy as much as kids. The peril is balanced by the unbreakable bond of the Parr family."</p>
+</div>
+<!-- Parent Review -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl shadow-sm">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold">SH</div>
+<div>
+<p class="font-bold text-primary">Sarah H.</p>
+<p class="text-xs text-on-surface-variant">Parent of 7yr and 4yr old</p>
+</div>
+<div class="ml-auto flex text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-on-surface-variant">"My 7 year old loved the action, but my 4 year old found the 'Omnidroid' robot a bit scary in the first act. Definitely watch together the first time!"</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Sidebar -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Age Recommendation Card -->
+<div class="bg-primary text-on-primary p-8 rounded-3xl editorial-shadow relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-32 h-32 bg-secondary opacity-20 rounded-full blur-3xl"></div>
+<p class="font-label text-sm uppercase tracking-widest opacity-80 mb-2">Age Target</p>
+<div class="text-6xl font-headline font-extrabold mb-4">6+</div>
+<p class="text-on-primary/90 text-sm mb-6">Safe for early elementary and up. Parental guidance suggested for children sensitive to loud sounds or intense visuals.</p>
+<div class="pt-6 border-t border-on-primary/10 flex items-center justify-between">
+<span class="text-xs font-bold opacity-80 uppercase tracking-tighter">Confidence Score</span>
+<div class="flex gap-1">
+<div class="w-2 h-2 bg-secondary rounded-full"></div>
+<div class="w-2 h-2 bg-secondary rounded-full"></div>
+<div class="w-2 h-2 bg-secondary rounded-full"></div>
+<div class="w-2 h-2 bg-secondary rounded-full"></div>
+<div class="w-2 h-2 bg-on-primary/20 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Related Content -->
+<div class="space-y-4">
+<h3 class="font-headline text-xl font-bold text-primary">Related Content</h3>
+<div class="group cursor-pointer">
+<div class="relative h-40 rounded-2xl overflow-hidden mb-2">
+<img alt="Incredibles 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="animated family in superhero costumes standing on a rooftop at night with city lights, cinematic animation style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVeZfh-r1QelBBpNCIg5Yc-w9luM9azthaywDy9n_axzcp_wVcKi98y753WVJ3IyS7kVtJubW3_Sn4M6FkbWNX8RML6Z1ujVstckOP3mTsJJl1ru43kl5Fichf4--RBc3l4CNpz-wdSCQnQELeFdbeMPEAmU_T6mphU6LmM9CdNsEP954WgCEU0iDwfkZ-oAYCQ3zVg1Du9VKPkPHEvHJvU5klG4TKaOfjABxxqnZ7qIlJiAHdF_TgDVF7noI0JL4OfrPOtK4SjKZX"/>
+<div class="absolute top-2 right-2 bg-white/90 backdrop-blur-md px-2 py-1 rounded-lg text-[10px] font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                                6+ SAFE
+                            </div>
+</div>
+<h4 class="font-bold text-primary">Incredibles 2</h4>
+<p class="text-xs text-on-surface-variant">Movies • Sequel</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative h-40 rounded-2xl overflow-hidden mb-2">
+<img alt="Big Hero 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="large white inflatable friendly robot and a young boy in futuristic city setting, sunlit afternoon, heartwarming animation style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAokBxj854J8dwBWMooVJA6LvsWmPdrLkawFytSCZ4fdnij5HkpaZ39hdJQ5zKYiylcAqVzXhOVcR-XD5KM4iZ3SseHkfPLpRjI9iZ6j1ROlOLw3B-Z3QUxlP81b35qXlGqDQmLYs2RV0v9usvcERPHIpVrXkOtBdU2glU3XSVnL3RRoaXbqlGcRDlDvu5Y38BaDHeAbHYVcDrSNYkT1Q7fX-BrZGQXTxEtrH0AdxjjN3NYxDvNUjPHRylv4-1IW0gO6VS_1FMNC7QB"/>
+<div class="absolute top-2 right-2 bg-white/90 backdrop-blur-md px-2 py-1 rounded-lg text-[10px] font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                                5+ SAFE
+                            </div>
+</div>
+<h4 class="font-bold text-primary">Big Hero 6</h4>
+<p class="text-xs text-on-surface-variant">Movies • Action</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-end px-4 pb-4 lg:hidden bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-t-3xl shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 py-3">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium font-plus-jakarta mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-sky-900 dark:bg-sky-200 text-white dark:text-sky-900 rounded-full w-12 h-12 mb-1 shadow-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 py-3">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-[10px] font-medium font-plus-jakarta mt-1">Community</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 py-3">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="text-[10px] font-medium font-plus-jakarta mt-1">Assistant</span>
+</div>
+</nav>
+<!-- SideNavBar (Hidden by default, used for filtering on large screens) -->
+<aside class="hidden lg:flex fixed left-0 top-0 h-full w-64 flex-col border-r border-slate-200/20 pt-20 px-4 bg-slate-50 dark:bg-slate-900 -z-10 translate-x-[-100%] transition-transform duration-300">
+<div class="mb-8 px-2">
+<h3 class="font-manrope text-lg font-bold text-sky-900">Guardian Controls</h3>
+<p class="font-plus-jakarta text-xs text-slate-500">Refine Content Safety</p>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-3 px-4 py-3 bg-sky-100 dark:bg-sky-900/40 text-sky-900 dark:text-sky-100 font-bold rounded-xl transition-all">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+<span class="text-sm font-plus-jakarta">Safety Filters</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 rounded-xl transition-all">
+<span class="material-symbols-outlined text-lg">child_care</span>
+<span class="text-sm font-plus-jakarta">Age Ranges</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 rounded-xl transition-all">
+<span class="material-symbols-outlined text-lg">category</span>
+<span class="text-sm font-plus-jakarta">Themes</span>
+</div>
+</div>
+</aside>
+</body></html>
