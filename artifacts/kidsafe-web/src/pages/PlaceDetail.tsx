@@ -1,5 +1,5 @@
 import { useRoute, Link } from "wouter";
-import { ArrowLeft, MapPin, Share2, Bookmark } from "lucide-react";
+import { ArrowLeft, MapPin, Share2, Bookmark, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { getPlace } from "@/data/places";
 import { AgeBadge } from "@/components/AgeBadge";
@@ -15,71 +15,74 @@ export default function PlaceDetail() {
   if (!place) return <NotFound />;
   
   return (
-    <div className="pb-32 bg-background">
-      <section className="relative overflow-hidden border-b border-border/40 bg-gradient-to-br from-accent/20 via-background to-background pt-8 pb-16 md:pt-12 md:pb-24">
-        <div className="container mx-auto px-6 relative z-10">
-          <Link href="/browse" className="mb-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors">
-            <ArrowLeft className="h-4 w-4" /> Back to browse
+    <div className="pb-24 md:pb-32 bg-background">
+      <section className="border-b border-border bg-accent/10 pt-8 pb-12 md:pt-12 md:pb-16">
+        <div className="container mx-auto px-6">
+          <Link href="/browse" className="mb-6 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors">
+            <ArrowLeft className="h-3 w-3" /> Back to browse
           </Link>
           
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}>
-            <div className="overflow-hidden rounded-[2.5rem] border-4 border-card shadow-2xl shadow-primary/10 mb-10 max-w-5xl">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            <div className="overflow-hidden rounded-2xl border border-border shadow-md mb-8 max-w-4xl mx-auto md:mx-0">
               <PosterPlaceholder title={place.name} seed={place.name.length} aspect="21/9" className="w-full" />
             </div>
           </motion.div>
           
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 1, 0.5, 1] }} className="max-w-4xl space-y-6">
-            <div className="flex flex-wrap items-center gap-3">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="max-w-3xl space-y-6">
+            <div className="flex flex-wrap items-center gap-2">
               <AgeBadge age={place.ageRecommendation} />
-              <span className="rounded-full bg-card border border-border/50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-muted-foreground shadow-sm">{place.category}</span>
+              <span className="rounded-full bg-background border border-border px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">{place.category}</span>
             </div>
             
-            <h1 className="font-serif text-5xl font-bold leading-tight md:text-7xl tracking-tight">{place.name}</h1>
+            <h1 className="font-serif text-4xl font-medium leading-[1.1] md:text-6xl tracking-tight">{place.name}</h1>
             
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent/50 text-base font-bold text-foreground">
-              <MapPin className="h-5 w-5 text-primary" /> {place.location}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-muted text-sm font-medium text-foreground">
+              <MapPin className="h-4 w-4 text-primary" /> {place.location}
             </div>
             
-            <p className="max-w-3xl text-xl leading-relaxed text-foreground/80 font-medium pt-2">{place.description}</p>
+            <p className="text-base md:text-lg leading-relaxed text-foreground/80">{place.description}</p>
             
-            <div className="flex flex-wrap gap-4 pt-6">
-              <Button size="lg" className="rounded-full px-8 text-base font-bold shadow-lg shadow-primary/20"><Bookmark className="mr-2 h-5 w-5" /> Save to places</Button>
-              <Button size="lg" variant="outline" className="rounded-full px-8 text-base font-bold border-2"><Share2 className="mr-2 h-5 w-5" /> Share</Button>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Button className="rounded-full px-6"><Bookmark className="mr-2 h-4 w-4" /> Save</Button>
+              <Button variant="outline" className="rounded-full px-6"><Share2 className="mr-2 h-4 w-4" /> Share</Button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      <div className="container mx-auto grid gap-16 px-6 pt-16 lg:grid-cols-[1fr_400px]">
-        <div className="space-y-16">
+      <div className="container mx-auto grid gap-12 px-6 pt-12 lg:grid-cols-[1fr_340px]">
+        <div className="space-y-12">
           <section>
-            <h2 className="mb-8 font-serif text-4xl font-bold">Safety analysis</h2>
+            <h2 className="mb-6 font-serif text-3xl font-medium">Safety analysis</h2>
             <SafetyScore scores={place.safetyScores} />
           </section>
 
-          <section className="rounded-[2.5rem] border border-amber-200/50 bg-gradient-to-br from-amber-50 to-orange-50/30 p-8 md:p-12 shadow-xl shadow-amber-500/5">
-            <h2 className="mb-6 font-serif text-3xl font-bold text-amber-950">What parents need to know</h2>
-            <p className="text-xl leading-relaxed text-amber-900/90 font-medium">{place.whatParentsNeedToKnow}</p>
+          <section className="rounded-2xl border border-amber-200 bg-amber-50/50 p-6 md:p-8">
+            <div className="flex items-center gap-2 mb-4">
+              <ShieldCheck className="h-5 w-5 text-amber-600" />
+              <h2 className="font-serif text-2xl font-medium text-amber-900">What parents need to know</h2>
+            </div>
+            <p className="text-base md:text-lg leading-relaxed text-amber-800/90">{place.whatParentsNeedToKnow}</p>
           </section>
 
           <section>
-            <div className="mb-8 flex items-baseline justify-between">
-              <h2 className="font-serif text-4xl font-bold">Parent reviews</h2>
-              <span className="text-xl font-bold text-muted-foreground bg-accent/50 px-4 py-1 rounded-full">{place.parentReviews.length}</span>
+            <div className="mb-6 flex items-center justify-between border-b border-border pb-4">
+              <h2 className="font-serif text-2xl font-medium">Parent reviews</h2>
+              <span className="text-sm font-medium text-muted-foreground">{place.parentReviews.length} reviews</span>
             </div>
-            <div className="grid gap-6">
+            <div className="grid gap-4">
               {place.parentReviews.map(r => <ReviewCard key={r.id} review={r} />)}
             </div>
           </section>
         </div>
         
-        <aside className="space-y-8">
-          <div className="sticky top-32 space-y-8">
-            <div className="rounded-[2rem] border border-border/40 bg-card p-8 shadow-xl shadow-primary/5">
-              <h3 className="mb-5 text-sm font-bold uppercase tracking-widest text-muted-foreground">Themes & Tags</h3>
-              <div className="flex flex-wrap gap-2.5">
+        <aside className="space-y-6">
+          <div className="sticky top-24 space-y-6">
+            <div className="rounded-xl border border-border bg-card p-5">
+              <h3 className="mb-3 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Themes</h3>
+              <div className="flex flex-wrap gap-2">
                 {place.tags.map(t => (
-                  <span key={t} className="rounded-full border border-border/50 bg-background px-4 py-2 text-sm font-bold text-muted-foreground shadow-sm hover:text-foreground hover:border-primary/50 transition-colors cursor-default">#{t}</span>
+                  <span key={t} className="rounded-full border border-border bg-muted/50 px-2.5 py-1 text-xs text-muted-foreground">#{t}</span>
                 ))}
               </div>
             </div>
