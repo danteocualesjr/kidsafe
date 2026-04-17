@@ -94,17 +94,6 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="absolute -left-10 top-1/4 rounded-3xl border border-border/50 bg-card/95 p-5 shadow-2xl backdrop-blur-md hidden lg:block animate-bounce" style={{ animationDuration: '4s' }}>
-              <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700">
-                  <Sparkles className="h-6 w-6" />
-                </div>
-                <div>
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">8 criteria</div>
-                  <div className="text-base font-bold">Safety breakdown</div>
-                </div>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>
