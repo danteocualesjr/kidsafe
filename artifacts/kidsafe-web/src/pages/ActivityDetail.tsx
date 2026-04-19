@@ -49,10 +49,13 @@ export default function ActivityDetail() {
   if (!activity) return <NotFound />;
 
   const seed = activities.findIndex((a) => a.id === activity.id);
-  const similar = activities
+  const sameCategory = activities
     .filter((a) => a.id !== activity.id && a.category === activity.category)
-    .sort((a, b) => safetyTotal(b) - safetyTotal(a))
-    .slice(0, 3);
+    .sort((a, b) => safetyTotal(b) - safetyTotal(a));
+  const fallback = activities
+    .filter((a) => a.id !== activity.id && !sameCategory.find((s) => s.id === a.id))
+    .sort((a, b) => safetyTotal(b) - safetyTotal(a));
+  const similar = [...sameCategory, ...fallback].slice(0, 3);
 
   const scoreEntries = Object.entries(activity.safetyScores) as [string, number][];
   const left = scoreEntries.slice(0, 4);

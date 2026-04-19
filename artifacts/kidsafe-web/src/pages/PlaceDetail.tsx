@@ -51,10 +51,13 @@ export default function PlaceDetail() {
   if (!place) return <NotFound />;
 
   const seed = places.findIndex((p) => p.id === place.id);
-  const similar = places
+  const sameCategory = places
     .filter((p) => p.id !== place.id && p.category === place.category)
-    .sort((a, b) => safetyTotal(b) - safetyTotal(a))
-    .slice(0, 3);
+    .sort((a, b) => safetyTotal(b) - safetyTotal(a));
+  const fallback = places
+    .filter((p) => p.id !== place.id && !sameCategory.find((s) => s.id === p.id))
+    .sort((a, b) => safetyTotal(b) - safetyTotal(a));
+  const similar = [...sameCategory, ...fallback].slice(0, 3);
 
   const scoreEntries = Object.entries(place.safetyScores) as [string, number][];
   const left = scoreEntries.slice(0, 4);
