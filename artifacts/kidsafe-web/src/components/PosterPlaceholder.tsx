@@ -9,7 +9,7 @@ const GRADIENTS = [
   ["#8a5d6c", "#c98aa3"],
 ];
 
-export function PosterPlaceholder({ title, seed = 0, aspect = "2/3", className = "" }: { title: string; seed?: number; aspect?: string; className?: string }) {
+export function PosterPlaceholder({ title, seed = 0, aspect = "2/3", className = "", hideContent = false }: { title: string; seed?: number; aspect?: string; className?: string; hideContent?: boolean }) {
   const [a, b] = GRADIENTS[seed % GRADIENTS.length];
 
   return (
@@ -19,12 +19,14 @@ export function PosterPlaceholder({ title, seed = 0, aspect = "2/3", className =
     >
       <div className="absolute inset-0 bg-black/10 mix-blend-overlay" />
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.1] mix-blend-overlay" />
-      <div className="absolute inset-0 p-6 flex flex-col items-center justify-center z-10">
-        <Sparkles className="mb-4 h-8 w-8 opacity-70" />
-        <h3 className="font-serif text-xl md:text-2xl font-bold leading-tight line-clamp-4 drop-shadow-md">
-          {title}
-        </h3>
-      </div>
+      {!hideContent && (
+        <div className="absolute inset-0 p-6 flex flex-col items-center justify-center z-10">
+          <Sparkles className="mb-4 h-8 w-8 opacity-70" />
+          <h3 className="font-serif text-xl md:text-2xl font-bold leading-tight line-clamp-4 drop-shadow-md">
+            {title}
+          </h3>
+        </div>
+      )}
     </div>
   );
 }

@@ -40,6 +40,7 @@ export type Book = {
   id: string;
   title: string;
   author: string;
+  publisher?: string;
   year: number;
   ageRecommendation: number;
   coverUrl: string;
@@ -95,6 +96,8 @@ export type Activity = {
   ageRecommendation: number;
   imageUrl: string;
   category: string;
+  duration?: string;
+  materials?: string[];
   description: string;
   safetyScores: SafetyScores;
   parentReviews: Review[];

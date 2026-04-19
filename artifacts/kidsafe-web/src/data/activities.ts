@@ -7,6 +7,8 @@ export const activities: Activity[] = [
     ageRecommendation: 5,
     imageUrl: "",
     category: "STEM",
+    duration: "45 min weekly",
+    materials: ["Subscription kit", "Common pantry items", "Mixing bowls", "Aprons"],
     description: "A weekly subscription kit featuring food-safe science experiments using common kitchen ingredients.",
     safetyScores: { violence: 0, language: 0, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 2, positiveMessages: 5, roleModels: 5 },
     parentReviews: [
@@ -21,6 +23,8 @@ export const activities: Activity[] = [
     ageRecommendation: 6,
     imageUrl: "",
     category: "Outdoor",
+    duration: "90 min monthly",
+    materials: ["Journals (provided)", "Pencils & watercolor sets", "Comfortable shoes"],
     description: "Local park-led monthly workshop teaching observational drawing, watercolor sketching, and nature identification.",
     safetyScores: { violence: 0, language: 0, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 0, positiveMessages: 5, roleModels: 5 },
     parentReviews: [
@@ -35,6 +39,8 @@ export const activities: Activity[] = [
     ageRecommendation: 7,
     imageUrl: "",
     category: "Arts",
+    duration: "60-90 min drop-in",
+    materials: ["Clay (provided)", "Apron", "Old clothes"],
     description: "Drop-in pottery sessions for kids 7-13 with supervised wheel time and air-dry hand-building options for younger siblings.",
     safetyScores: { violence: 0, language: 0, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 1, positiveMessages: 5, roleModels: 5 },
     parentReviews: [
@@ -49,6 +55,8 @@ export const activities: Activity[] = [
     ageRecommendation: 6,
     imageUrl: "",
     category: "Cooking",
+    duration: "75 min weekly",
+    materials: ["Ingredients (provided)", "Aprons", "Kid-safe knives", "Allergy info card"],
     description: "Weekly community center cooking class focusing on world cuisines and safe knife skills.",
     safetyScores: { violence: 0, language: 0, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 0, positiveMessages: 5, roleModels: 5 },
     parentReviews: [
@@ -63,6 +71,8 @@ export const activities: Activity[] = [
     ageRecommendation: 4,
     imageUrl: "",
     category: "Movement",
+    duration: "45 min weekly",
+    materials: ["Mats (provided)", "Comfortable clothing", "Water bottle"],
     description: "Story-based yoga classes that use breathing exercises and animal poses to teach mindfulness.",
     safetyScores: { violence: 0, language: 0, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 0, positiveMessages: 5, roleModels: 5 },
     parentReviews: [
@@ -77,6 +87,8 @@ export const activities: Activity[] = [
     ageRecommendation: 2,
     imageUrl: "",
     category: "Reading",
+    duration: "30 min weekly",
+    materials: ["Nothing — just bring your child"],
     description: "Weekly free library story time with songs, finger plays, and themed picture books for ages 2-5.",
     safetyScores: { violence: 0, language: 0, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 0, positiveMessages: 5, roleModels: 5 },
     parentReviews: [
@@ -91,6 +103,8 @@ export const activities: Activity[] = [
     ageRecommendation: 5,
     imageUrl: "",
     category: "Sports",
+    duration: "60 min weekly",
+    materials: ["Cleats", "Shin guards", "Water bottle", "Team jersey"],
     description: "Volunteer-led recreational soccer league focused on skill-building, sportsmanship, and zero-pressure play.",
     safetyScores: { violence: 1, language: 1, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 1, positiveMessages: 5, roleModels: 4 },
     parentReviews: [
@@ -105,6 +119,8 @@ export const activities: Activity[] = [
     ageRecommendation: 8,
     imageUrl: "",
     category: "STEM",
+    duration: "120 min weekly",
+    materials: ["Devices (provided)", "Notebook", "Curiosity"],
     description: "After-school coding club teaching Scratch and beginner Python through game-building projects.",
     safetyScores: { violence: 0, language: 0, sexualContent: 0, scariness: 0, substanceUse: 0, consumerism: 1, positiveMessages: 5, roleModels: 5 },
     parentReviews: [

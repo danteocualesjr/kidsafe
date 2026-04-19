@@ -63,17 +63,15 @@ export default function ActivityDetail() {
       {/* Editorial scene hero */}
       <header className="relative flex min-h-[520px] w-full items-end overflow-hidden px-6 pb-16 pt-24 md:min-h-[600px] md:px-12 md:pb-20 md:pt-28 lg:px-20">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-accent via-secondary to-primary" />
-          <div
-            className="absolute inset-0 opacity-25 mix-blend-overlay"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 30% 25%, white 0%, transparent 45%), radial-gradient(circle at 75% 80%, white 0%, transparent 40%)",
-            }}
-            aria-hidden
+          <PosterPlaceholder
+            title=""
+            seed={seed + 4}
+            aspect="auto"
+            className="h-full w-full"
+            hideContent
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/40 to-transparent" />
         </div>
 
         <motion.div
@@ -270,8 +268,14 @@ export default function ActivityDetail() {
                       {activity.category}
                     </p>
                   </div>
+                  {activity.duration && (
+                    <div className="flex items-center gap-2 rounded-xl bg-muted/60 px-3 py-2 text-xs">
+                      <Clock className="h-3.5 w-3.5 text-secondary" />
+                      <span className="font-semibold text-foreground">Duration</span>
+                      <span className="ml-auto font-bold text-primary">{activity.duration}</span>
+                    </div>
+                  )}
                   <div className="flex items-center gap-2 rounded-xl bg-muted/60 px-3 py-2 text-xs">
-                    <Clock className="h-3.5 w-3.5 text-secondary" />
                     <span className="font-semibold text-foreground">Recommended</span>
                     <span className="ml-auto font-bold text-primary">
                       Ages {activity.ageRecommendation}+
@@ -279,6 +283,22 @@ export default function ActivityDetail() {
                   </div>
                 </div>
               </div>
+
+              {activity.materials && activity.materials.length > 0 && (
+                <div className="rounded-2xl border border-border/60 bg-card p-5">
+                  <h3 className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
+                    What you'll need
+                  </h3>
+                  <ul className="space-y-2">
+                    {activity.materials.map((m) => (
+                      <li key={m} className="flex items-start gap-2 text-sm text-foreground">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
+                        <span>{m}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               <div className="rounded-2xl border border-border/60 bg-card p-5">
                 <h3 className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground">

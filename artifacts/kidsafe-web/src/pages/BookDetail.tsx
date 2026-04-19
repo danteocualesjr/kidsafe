@@ -53,19 +53,18 @@ export default function BookDetail() {
 
   return (
     <div className="bg-background pb-24 md:pb-32">
-      {/* Editorial gradient hero */}
+      {/* Cover-art editorial hero */}
       <header className="relative flex min-h-[520px] w-full items-end overflow-hidden px-6 pb-16 pt-24 md:min-h-[600px] md:px-12 md:pb-20 md:pt-28 lg:px-20">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-secondary/80" />
-          <div
-            className="absolute inset-0 opacity-25 mix-blend-overlay"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 25% 20%, white 0%, transparent 45%), radial-gradient(circle at 80% 75%, white 0%, transparent 40%)",
-            }}
-            aria-hidden
+          <PosterPlaceholder
+            title=""
+            seed={seed}
+            aspect="auto"
+            className="h-full w-full"
+            hideContent
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/40 to-transparent" />
         </div>
 
         <motion.div
@@ -76,7 +75,7 @@ export default function BookDetail() {
         >
           <Link
             href="/browse"
-            className="mb-6 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.18em] text-white/70 transition-colors hover:text-white"
+            className="mb-6 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-primary"
           >
             <ArrowLeft className="h-3 w-3" /> Back to browse
           </Link>
@@ -85,37 +84,38 @@ export default function BookDetail() {
             <span className="inline-flex items-center gap-1 rounded-full bg-secondary px-4 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-secondary-foreground">
               <ShieldCheck className="h-3 w-3" /> KidSafe Certified
             </span>
-            <span className="text-sm font-semibold text-white/85">
+            <span className="text-sm font-semibold text-muted-foreground">
               {book.year} · {book.pages} pages · {book.genres.slice(0, 2).join(" / ")}
             </span>
           </div>
 
-          <h1 className="mb-4 font-serif text-5xl font-extrabold leading-[0.95] tracking-tight text-white md:text-7xl lg:text-[5.5rem]">
+          <h1 className="mb-4 font-serif text-5xl font-extrabold leading-[0.95] tracking-tight text-primary md:text-7xl lg:text-[5.5rem]">
             {book.title}
           </h1>
 
-          <p className="mb-8 text-base font-semibold uppercase tracking-[0.18em] text-accent">
+          <p className="mb-8 text-base font-semibold uppercase tracking-[0.18em] text-secondary">
             By {book.author}
+            {book.publisher ? <span className="text-muted-foreground"> · {book.publisher}</span> : null}
           </p>
 
           <div className="flex flex-wrap gap-3">
             <Button
               size="lg"
-              className="rounded-3xl bg-accent px-7 py-6 text-sm font-bold text-accent-foreground shadow-lg shadow-primary/30 hover:bg-accent/90"
+              className="rounded-3xl bg-gradient-to-r from-primary to-primary/80 px-7 py-6 text-sm font-bold shadow-lg shadow-primary/20"
             >
               <BookOpen className="mr-2 h-4 w-4" /> Read sample
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="rounded-3xl border-white/30 bg-white/10 px-7 py-6 text-sm font-bold text-white backdrop-blur hover:bg-white/20 hover:text-white"
+              className="rounded-3xl border-border bg-card px-7 py-6 text-sm font-bold"
             >
               <Bookmark className="mr-2 h-4 w-4" /> Add to Reading List
             </Button>
             <Button
               size="lg"
               variant="ghost"
-              className="rounded-3xl px-7 py-6 text-sm font-bold text-white/85 hover:bg-white/10 hover:text-white"
+              className="rounded-3xl px-7 py-6 text-sm font-bold"
             >
               <Share2 className="mr-2 h-4 w-4" /> Share
             </Button>
@@ -268,14 +268,33 @@ export default function BookDetail() {
                     className="h-full w-full"
                   />
                 </div>
-                <div className="p-5">
-                  <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-secondary">
-                    Written by
+                <div className="space-y-3 p-5">
+                  <div>
+                    <div className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-secondary">
+                      Written by
+                    </div>
+                    <p className="font-serif text-lg font-bold text-primary">{book.author}</p>
                   </div>
-                  <p className="font-serif text-lg font-bold text-primary">{book.author}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    {book.pages} pages · {book.year}
-                  </p>
+                  {book.publisher && (
+                    <div>
+                      <div className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-secondary">
+                        Publisher
+                      </div>
+                      <p className="text-sm font-semibold text-foreground">{book.publisher}</p>
+                    </div>
+                  )}
+                  <div className="flex items-center justify-between rounded-xl bg-muted/60 px-3 py-2 text-xs">
+                    <span className="font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                      Reading length
+                    </span>
+                    <span className="font-bold text-primary">{book.pages} pages</span>
+                  </div>
+                  <div className="flex items-center justify-between rounded-xl bg-muted/60 px-3 py-2 text-xs">
+                    <span className="font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                      Published
+                    </span>
+                    <span className="font-bold text-primary">{book.year}</span>
+                  </div>
                 </div>
               </div>
 

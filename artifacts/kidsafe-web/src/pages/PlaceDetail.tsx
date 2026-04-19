@@ -65,17 +65,15 @@ export default function PlaceDetail() {
       {/* Editorial location hero */}
       <header className="relative flex min-h-[520px] w-full items-end overflow-hidden px-6 pb-16 pt-24 md:min-h-[600px] md:px-12 md:pb-20 md:pt-28 lg:px-20">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-secondary via-primary to-primary" />
-          <div
-            className="absolute inset-0 opacity-25 mix-blend-overlay"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 20% 30%, white 0%, transparent 45%), radial-gradient(circle at 80% 70%, white 0%, transparent 40%)",
-            }}
-            aria-hidden
+          <PosterPlaceholder
+            title=""
+            seed={seed + 2}
+            aspect="auto"
+            className="h-full w-full"
+            hideContent
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/40 to-transparent" />
         </div>
 
         <motion.div
